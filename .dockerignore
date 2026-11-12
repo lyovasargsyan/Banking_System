@@ -1,4 +1,5 @@
-.git
-.idea
 target/
-*.log
+.git/
+.idea/
+*.iml
+.env

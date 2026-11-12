@@ -1,0 +1,22 @@
+databases:
+  - name: bank-db
+    databaseName: bank_system
+    user: bank_user
+    plan: free
+
+services:
+  - type: web
+    name: bank-system
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DB_HOST
+        fromDatabase: { name: bank-db, property: host }
+      - key: DB_PORT
+        fromDatabase: { name: bank-db, property: port }
+      - key: DB_NAME
+        fromDatabase: { name: bank-db, property: database }
+      - key: DB_USER
+        fromDatabase: { name: bank-db, property: user }
+      - key: DB_PASSWORD
+        fromDatabase: { name: bank-db, property: password }
