@@ -8,7 +8,9 @@ import java.math.BigDecimal;
 
 @Getter
 @Entity
-@Table(name="accounts")
+@Table(name="accounts", indexes = {
+        @Index(name = "accounts_ownerName_index", columnList = "ownerName"),
+})
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

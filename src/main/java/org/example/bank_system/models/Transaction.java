@@ -9,7 +9,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @Entity
-@Table(name="transactions")
+@Table(name="transactions", indexes = {
+        @Index(name = "transactoins_sender_timestamp", columnList = "senderAccountNumber, timestamp"),
+        @Index(name = "transactoins_receiver_timestamp", columnList = "receiverAccountNumber, timestamp")
+})
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
