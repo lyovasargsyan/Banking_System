@@ -44,7 +44,7 @@ public class TransactionController {
     }
 
 
-    @GetMapping("/{senderAccountNumber}/transactionhistory")
+    @PostMapping("/{senderAccountNumber}/transactionhistory")
     @ResponseStatus(HttpStatus.OK)
     public List<Transaction> transactionsHistory(@PathVariable String senderAccountNumber,
                                                  @Valid @RequestBody TransactionsHistoryRequest request){

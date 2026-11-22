@@ -18,7 +18,7 @@ public class AnalyticsController {
         this.analyticsService = analyticsService;
     }
 
-    @GetMapping("/{accountNumber}")
+    @PostMapping("/{accountNumber}")
     @ResponseStatus(HttpStatus.OK)
     public AnalyticsResponse transactionAnalytics(@PathVariable String accountNumber,
                                                   @Valid @RequestBody AnalyticsRequest request){
